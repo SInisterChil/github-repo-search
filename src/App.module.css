@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+.App {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: #e6f7ff;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 70px;
+  font-weight: 600;
+  font-family: "Roboto", sans-serif;
+  color: #b393d3;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 0px #957dad, 1px 2px 0px #957dad, 1px 3px 0px #957dad,
+    1px 4px 0px #957dad, 1px 5px 0px #957dad, 1px 6px 0px #957dad,
+    1px 10px 5px rgba(16, 16, 16, 0.5), 1px 15px 10px rgba(16, 16, 16, 0.4),
+    1px 20px 30px rgba(16, 16, 16, 0.3), 1px 25px 50px rgba(16, 16, 16, 0.2);
+}
+
+.repo-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.select-container {
+  margin-top: 10px;
+}
+
+.select-container label {
+  font-size: 16px;
+  margin-right: 8px;
+}
+
+.select-container select {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.select-container select:hover {
+  background-color: #f0f0f0;
+}

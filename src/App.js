@@ -1,23 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import SearchBar from './SearchBar';
+import RepoList from './RepoList';
+import styles from './App.module.css';
 
 function App() {
+  const [query, setQuery] = useState('');
+  const [sort, setSort] = useState('stars');
+
+  const handleSearch = (query) => {
+    setQuery(query);
+  };
+
+  const handleSort = (e) => {
+    setSort(e.target.value);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.App}>
+      <h1 className={styles.h1}>GitHub Repository Search</h1>
+      <SearchBar onSearch={handleSearch} />
+      <div className={styles['select-container']}>
+        <label>Sort By:</label>
+        <select value={sort} onChange={handleSort}>
+          <option value="stars">Stars</option>
+          <option value="watchers">Watchers</option>
+          <option value="score">Score</option>
+          <option value="name">Name</option>
+          <option value="created">Created Date</option>
+          <option value="updated">Updated Date</option>
+        </select>
+      </div>
+      <RepoList query={query} sort={sort} className={styles['repo-list-container']}/>
     </div>
   );
 }
