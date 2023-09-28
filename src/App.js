@@ -6,9 +6,11 @@ import styles from './App.module.css';
 function App() {
   const [query, setQuery] = useState('');
   const [sort, setSort] = useState('stars');
+  const [page, setPage] = useState(1);
 
   const handleSearch = (query) => {
     setQuery(query);
+    setPage(1);
   };
 
   const handleSort = (e) => {
@@ -30,7 +32,7 @@ function App() {
           <option value="updated">Updated Date</option>
         </select>
       </div>
-      <RepoList query={query} sort={sort} className={styles['repo-list-container']}/>
+      <RepoList query={query} sort={sort} page={page} setPage={setPage} className={styles['repo-list-container']}/>
     </div>
   );
 }
